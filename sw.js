@@ -1,13 +1,17 @@
-const CACHE='coco-jewel-garden-v30';
-const ASSETS=['./?v=30','index.html','manifest.json','css/game.css?v=30','js/game.js?v=30'];
+const CACHE='coco-jewel-garden-v31';
+const ASSETS=['./?v=31','index.html','manifest.json','css/game.css?v=31','css/v31.css?v=31','js/game.js?v=31'];
 function bustHtml(html){
-  return html
-    .replaceAll('css/game.css?v=29','css/game.css?v=30')
-    .replaceAll('js/game.js?v=29','js/game.js?v=30')
+  let out=html
+    .replaceAll('css/game.css?v=29','css/game.css?v=31')
+    .replaceAll('css/game.css?v=30','css/game.css?v=31')
+    .replaceAll('js/game.js?v=29','js/game.js?v=31')
+    .replaceAll('js/game.js?v=30','js/game.js?v=31')
     .replaceAll('Rocket</b><i class="count">3</i>','Rocket</b><i class="count">5</i>')
     .replaceAll('Bomb</b><i class="count">3</i>','Bomb</b><i class="count">4</i>')
     .replaceAll('Rainbow</b><i class="count">1</i>','Rainbow</b><i class="count">2</i>')
     .replaceAll('Moves +5</b><i class="count">2</i>','Moves +5</b><i class="count">3</i>');
+  if(!out.includes('css/v31.css')) out=out.replace('</head>','<link rel="stylesheet" href="css/v31.css?v=31">\n</head>');
+  return out;
 }
 self.addEventListener('install',event=>{
   self.skipWaiting();
