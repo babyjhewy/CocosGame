@@ -1,7 +1,7 @@
 {
   "name": "Coco's Jewel Garden",
   "short_name": "Coco Garden",
-  "start_url": "./?v=30",
+  "start_url": "./?v=31",
   "display": "standalone",
   "background_color": "#2c1308",
   "theme_color": "#5b2a12",
